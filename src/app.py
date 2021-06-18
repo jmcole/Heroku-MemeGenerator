@@ -11,15 +11,15 @@ from .MemeEngine import MemeEngine
 
 app = Flask(__name__)
 
-meme = MemeEngine('./static')
+meme = MemeEngine('src/static')
 
 
 def setup():
     """Load all resources."""
-    quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
-                   './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
-                   './_data/DogQuotes/DogQuotesCSV.csv']
+    quote_files = ['src/_data/DogQuotes/DogQuotesTXT.txt',
+                   'src/_data/DogQuotes/DogQuotesDOCX.docx',
+                   'src/_data/DogQuotes/DogQuotesPDF.pdf',
+                   'src/_data/DogQuotes/DogQuotesCSV.csv']
 
     # Use the Ingestor class to parse all files in quote_files variable
     quotes = []
@@ -27,7 +27,7 @@ def setup():
         for quote in Ingestor.parse(i):
             quotes.append(quote)
 
-    images_path = "./_data/photos/dog/"
+    images_path = "src/_data/photos/dog/"
 
     # Find images within the images images_path directory
     imgs = os.listdir(images_path)
