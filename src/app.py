@@ -11,7 +11,7 @@ from .MemeEngine import MemeEngine
 
 app = Flask(__name__)
 
-meme = MemeEngine('./static')
+meme = MemeEngine('src/static')
 
 
 def setup():
