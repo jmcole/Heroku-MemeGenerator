@@ -25,7 +25,7 @@ class MemeEngine:
             height = int(ratio*float(img.size[1]))
             img = img.resize((width, height), Image.NEAREST)
         # Get font
-        fnt = ImageFont.truetype("arial.ttf", 20)
+        fnt = ImageFont.truetype("src/_data/font/arial.ttf", 20)
         # Get drawing context
         d = ImageDraw.Draw(img)
         # Create text
